@@ -21,8 +21,7 @@ Bundle 'minibufexpl.vim'
 " ヤンクの履歴保持
 Bundle 'YankRing.vim'
 " ruby on rails
-Bundle 'rails.vim'
-
+Bundle 'tpope/vim-rails'
 
 filetype plugin indent on
 
