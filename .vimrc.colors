@@ -14,9 +14,11 @@ elseif &term =~ "xterm-color"
 endif
 
 "ポップアップメニューのカラーを設定
-"hi Pmenu guibg=#666666
-"hi PmenuSel guibg=#8cd0d3 guifg=#666666
-"hi PmenuSbar guibg=#333333
+" ポップアップメニューの色変える
+highlight Pmenu  guibg=#3333ff guifg=#000000
+highlight PmenuSel guibg=#0000dd guifg=#000000
+highlight PmenuSbar guibg=#333333
+highlight PmenuThumb guibg=#aaaaaa
 
 " ハイライト on
 syntax enable

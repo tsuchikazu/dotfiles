@@ -1,4 +1,4 @@
-"-------------------------------------------------------------------------------
+"[-------------------------------------------------------------------------------
 " 移動設定 Move
 "-------------------------------------------------------------------------------
 
@@ -25,12 +25,12 @@ imap <C-h> <Left>
 imap <C-l> <Right>
 
 "<space>j, <space>kで画面送り
-noremap <Space>j <C-f>
-noremap <Space>k <C-b>
+"noremap <Space>j <C-f>
+"noremap <Space>k <C-b>
 
 " spaceで次のbufferへ。back-spaceで前のbufferへ
-nmap <Space><Space> ;MBEbn<CR>
-nmap <BS><BS> ;MBEbp<CR>
+"nmap <Space><Space> ;MBEbn<CR>
+"nmap <BS><BS> ;MBEbp<CR>
 
 " F2で前のバッファ
 map <F2> <ESC>;bp<CR>
@@ -38,25 +38,25 @@ map <F2> <ESC>;bp<CR>
 map <F3> <ESC>;bn<CR>
 " F4でバッファを削除する
 map <F4> <ESC>:bnext \| bdelete #<CR>
-command! Bw :bnext \| bdelete #
+command! Bq :bnext \| bdelete #
 
 "フレームサイズを怠惰に変更する
-map <kPlus> <C-W>+
-map <kMinus> <C-W>-
+"map <kPlus> <C-W>+
+"map <kMinus> <C-W>-
 
 " 前回終了したカーソル行に移動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 " 最後に編集された位置に移動
-nnoremap gb '[
-nnoremap gp ']
+nnoremap gb g;
+nnoremap gp g,
 
 " 対応する括弧に移動
 nnoremap ( %
 nnoremap ) %
 
 " 最後に変更されたテキストを選択する
-nnoremap gc  `[v`]
+noremap gc  `[v`]
 vnoremap gc <C-u>normal gc<Enter>
 onoremap gc <C-u>normal gc<Enter>
 
@@ -74,17 +74,18 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
+nnoremap <buffer> <C-j> <C-w>j
+nnoremap <buffer> <C-l> <C-w>l
 
 " git-diff-aware version of gf commands.
 " http://labs.timedia.co.jp/2011/04/git-diff-aware-gf-commands-for-vim.html
-nnoremap <expr> gf  <SID>do_git_diff_aware_gf('gf')
-nnoremap <expr> gF  <SID>do_git_diff_aware_gf('gF')
-nnoremap <expr> <C-w>f  <SID>do_git_diff_aware_gf('<C-w>f')
-nnoremap <expr> <C-w><C-f>  <SID>do_git_diff_aware_gf('<C-w><C-f>')
-nnoremap <expr> <C-w>F  <SID>do_git_diff_aware_gf('<C-w>F')
-nnoremap <expr> <C-w>gf  <SID>do_git_diff_aware_gf('<C-w>gf')
-nnoremap <expr> <C-w>gF  <SID>do_git_diff_aware_gf('<C-w>gF')
-
+"nnoremap <expr> gf  <SID>do_git_diff_aware_gf('gf')
+"nnoremap <expr> gF  <SID>do_git_diff_aware_gf('gF')
+"nnoremap <expr> <C-w>f  <SID>do_git_diff_aware_gf('<C-w>f')
+"nnoremap <expr> <C-w><C-f>  <SID>do_git_diff_aware_gf('<C-w><C-f>')
+"nnoremap <expr> <C-w>F  <SID>do_git_diff_aware_gf('<C-w>F')
+"nnoremap <expr> <C-w>gf  <SID>do_git_diff_aware_gf('<C-w>gf')
+"nnoremap <expr> <C-w>gF  <SID>do_git_diff_aware_gf('<C-w>gF')
 function! s:do_git_diff_aware_gf(command)
   let target_path = expand('<cfile>')
   if target_path =~# '^[ab]/'  " with a peculiar prefix of git-diff(1)?

@@ -50,32 +50,34 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_enable_auto_select = 1
 
 " Define dictionary.
-"let g:neocomplcache_dictionary_filetype_lists = {
-"    \ 'default' : '',
-"    \ 'vimshell' : $HOME.'/.vimshell_hist',
-"    \ 'scala' : $HOME.'/.vim/bundle/vim-scala/dict/scala.dict',
-"    \ 'java' : $HOME.'/.vim/dict/java.dict',
-"    \ 'c' : $HOME.'/.vim/dict/c.dict',
-"    \ 'cpp' : $HOME.'/.vim/dict/cpp.dict',
-"    \ 'javascript' : $HOME.'/.vim/dict/javascript.dict',
-"    \ 'ocaml' : $HOME.'/.vim/dict/ocaml.dict',
-"    \ 'perl' : $HOME.'/.vim/dict/perl.dict',
-"    \ 'php' : $HOME.'/.vim/dict/php.dict',
-"    \ 'scheme' : $HOME.'/.vim/dict/scheme.dict',
-"    \ 'vm' : $HOME.'/.vim/dict/vim.dict'
-"    \ }
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scala' : $HOME.'/.vim/bundle/vim-scala/dict/scala.dict',
+    \ 'java' : $HOME.'/.vim/dict/java.dict',
+    \ 'c' : $HOME.'/.vim/dict/c.dict',
+    \ 'cpp' : $HOME.'/.vim/dict/cpp.dict',
+    \ 'javascript' : $HOME.'/.vim/dict/javascript.dict',
+    \ 'ocaml' : $HOME.'/.vim/dict/ocaml.dict',
+    \ 'perl' : $HOME.'/.vim/dict/perl.dict',
+    \ 'php' : $HOME.'/.vim/dict/php.dict',
+    \ 'scheme' : $HOME.'/.vim/dict/scheme.dict',
+    \ 'vm' : $HOME.'/.vim/dict/vim.dict'
+    \ }
 
 " Define keyword.
 " if !exists('g:neocomplcache_keyword_patterns')
     " let g:neocomplcache_keyword_patterns = {}
 " endif
 " let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+"
 " ユーザー定義スニペット保存ディレクトリ
 let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
+nnorema <silent> <Space>se  :<C-u>NeoComplCacheEditSnippets
 
 " スニペット
-"imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"imap <C-Space> "\<Plug>(neocomplcache_snippets_expand)"
+"smap <C-Space> "\<Plug>(neocomplcache_snippets_expand)"
 
 " 補完を選択しpopupを閉じる
 inoremap <expr><C-y> neocomplcache#close_popup()
@@ -96,7 +98,9 @@ inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完
 inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
 " 補完候補が出ていたら確定、なければ改行
-inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+"inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
+smap <expr><CR>  neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? neocomplcache#close_popup() : "<CR>"
+imap <expr><CR>  neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? neocomplcache#close_popup() : "<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -109,6 +113,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
@@ -134,9 +139,11 @@ let g:neocomplcache_include_patterns = {
   \ 'perl' : '^\s*use',
   \ }
 "インクルード先のファイル名の解析パターン
-" let g:neocomplcache_include_exprs = {
-  " \ 'ruby' : substitute(substitute(v:fname,'::','/','g'),'$','\.rb','')
-  " \ }
+ let g:neocomplcache_include_exprs = {
+   \ 'ruby' : substitute(substitute(v:fname,'::','/','g'),'$','\.rb','')
+   \ }
+
+
 
 "------------------------------------
 " unite.vim
@@ -146,12 +153,11 @@ nnoremap    [unite]   <Nop>
 nmap    f [unite]
 
 nnoremap [unite]u  :<C-u>Unite<Space>
-nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]f  :<C-u>Unite -buffer-name=files file<CR>
+nnoremap <silent> [unite]a  :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]d  :<C-u>Unite -buffer-name=files file_rec <CR>
 nnoremap <silent> [unite]b  :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]m  :<C-u>Unite file_mru<CR>
-
-" nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]o  :<C-u>Unite outline<CR>
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
@@ -166,4 +172,44 @@ endfunction"}}}
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :<C-q>q<CR>
 
 let g:unite_source_file_mru_limit = 200
+
+
+
+"------------------------------------
+" vimfiler.vim
+"------------------------------------
+call vimfiler#set_execute_file('vim', 'vim')
+call vimfiler#set_execute_file('txt', 'notepad')
+call vimfiler#set_execute_file('c', ['vim', 'notepad'])
+
+" Edit file by tabedit.
+"let g:vimfiler_edit_action = 'tabopen'
+"let g:vimfiler_preview_action = 'open'
+let g:vimfiler_as_default_explorer = 1
+
+" Enable file operation commands.
+let g:vimfiler_safe_mode_by_default = 0
+
+" Like Textmate icons.
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_file_icon = '-'
+let g:vimfiler_marked_file_icon = '*'
+
+" Use trashbox.
+" Windows only and require latest vimproc.
+"let g:unite_kind_file_use_trashbox = 1
+
+let g:vimfiler_pedit_command = 'right'
+let g:vimfiler_enable_auto_cd = 1
+nnoremap ff :VimFiler -buffer-name=explorer -split -winwidth=35 -toggle -no-quit<CR>
+"nnoremap ff :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
+
+
+"------------------------------------
+" surround.vim
+"------------------------------------
+"let g:surround_{char2nr("e")} = "<% \r %>¥r<% end %>"
+"let g:surround_{char2nr("=")} = "<%= \r %>"
 

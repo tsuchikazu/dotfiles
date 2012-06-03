@@ -12,6 +12,7 @@ set ruler
 "else
 "  set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %{g:HahHah()}\ %f%=[%{GetB()}]\ %{fugitive#statusline()}\ %l,%c%V%8P
 "endif
+set statusline=%<%f\ %m%r%h%w%=%{GetStatusEx()}\ \ %l,%c%V%8P
 
 "入力モード時、ステータスラインのカラーを変更
 augroup InsertHook
@@ -51,3 +52,20 @@ func! String2Hex(str)
   endwhile
   return out
 endfunc
+function! GetStatusEx()
+  let str = ''
+  if &ft != ''
+    let str = str . '[' . &ft . ']'
+  endif
+  if has('multi_byte')
+    if &fenc != ''
+      let str = str . '[' . &fenc . ']'
+    elseif &enc != ''
+      let str = str . '[' . &enc . ']'
+    endif
+  endif
+  if &ff != ''
+    let str = str . '[' . &ff . ']'
+  endif
+  return str
+endfunction
