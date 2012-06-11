@@ -463,6 +463,10 @@ export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:/sbin:usr/local/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+source ~/.rbenv/completions/rbenv.zsh
+
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
                 LBUFFER+="~/"

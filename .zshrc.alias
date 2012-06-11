@@ -5,7 +5,7 @@ alias ll='ls -l'
 alias la='ls -a'
 
 alias emacs='emacs -nw'
-alia sless='less -M'
+alias sless='less -M'
 
 # macVimの設定
 #export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
