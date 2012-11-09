@@ -34,6 +34,8 @@ Bundle 'ZenCoding.vim'
 " utility(囲むやつ)
 Bundle 'surround.vim'
 
+Bundle 'thinca/vim-quickrun'
+
 filetype plugin indent on
 
 nnoremap <Space>r :<C-u>execute "source " expand("%:p")<CR>
