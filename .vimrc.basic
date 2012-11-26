@@ -4,6 +4,7 @@
 let mapleader = ","              " キーマップリーダー
 set scrolloff=5                  " スクロール時の余白確保
 set textwidth=0                  " 一行に長い文章を書いていても自動折り返しをしない
+set nowrap
 set nobackup                     " バックアップ取らない
 set autoread                     " 他で書き換えられたら自動で読み直す
 set noswapfile                   " スワップファイル作らない
@@ -24,7 +25,8 @@ set guioptions+=a
 set ttymouse=xterm2
 
 "ヤンクした文字は、システムのクリップボードに入れる"
-set clipboard=unnamedplus,unnamed
+"set clipboard=unnamedplus,unnamed
+set clipboard=unnamed
 
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
 imap <C-p>  <ESC>"*pa

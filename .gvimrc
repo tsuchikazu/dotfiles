@@ -6,7 +6,7 @@ set guifont=Osaka-Mono:h14
 ""常にタブを表示
 "set showtabline=2
 "透明度を変更
-set transparency=10
+set transparency=0
 "map  gw :macaction selectNextWindow:
 "map  gW :macaction selectPreviousWindow:
 colorscheme torte
