@@ -33,6 +33,10 @@ Bundle 'tpope/vim-rails'
 Bundle 'ZenCoding.vim'
 " utility(囲むやつ)
 Bundle 'surround.vim'
+" wordpress 投稿
+Bundle "vim-scripts/VimRepress"
+" markdown ハイライト
+Bundle 'tpope/vim-markdown'
 
 Bundle 'thinca/vim-quickrun'
 
