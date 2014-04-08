@@ -228,3 +228,9 @@ nnoremap ff :VimFiler -buffer-name=explorer -split -winwidth=35 -toggle -no-quit
 "let g:surround_{char2nr("e")} = "<% \r %>¥r<% end %>"
 "let g:surround_{char2nr("=")} = "<%= \r %>"
 
+"------------------------------------
+" stephpy/vim-php-cs-fixer.vim
+"------------------------------------
+let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer"
+nnoremap <silent>,pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent>,pcf :call PhpCsFixerFixFile()<CR>

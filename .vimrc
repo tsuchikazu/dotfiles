@@ -40,6 +40,8 @@ Bundle 'tpope/vim-markdown'
 
 Bundle 'thinca/vim-quickrun'
 
+Bundle 'stephpy/vim-php-cs-fixer'
+
 filetype plugin indent on
 
 nnoremap <Space>r :<C-u>execute "source " expand("%:p")<CR>
