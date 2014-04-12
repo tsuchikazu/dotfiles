@@ -466,6 +466,7 @@ export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 source ~/.rbenv/completions/rbenv.zsh
 
 expand-to-home-or-insert () {
@@ -666,3 +667,4 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[[ -s /Users/tsuchikazu/.nvm/nvm.sh ]] && . /Users/tsuchikazu/.nvm/nvm.sh # This loads NVM

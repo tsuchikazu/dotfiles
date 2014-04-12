@@ -13,6 +13,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache'
 " ファイラー系（よくわかんないやつ。だけど人気）
 Bundle 'Shougo/unite.vim'
+" uniteのmruリソースに必要
+Bundle 'Shougo/neomru.vim'
 " ファイラー
 "keymappingsの重複してしまったので、回避がわからず
 "~/dotfiles/vimfiles/bundle/vimfiler/autoload/vimfiler/mappings.vim から
