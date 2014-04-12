@@ -18,6 +18,7 @@ Bundle 'Shougo/unite.vim'
 "~/dotfiles/vimfiles/bundle/vimfiler/autoload/vimfiler/mappings.vim から
 "<C-l>のkey mappingsを削除して使ってます。
 Bundle 'Shougo/vimfiler'
+Bundle 'Shougo/vimproc'
 
 " リファレンス
 Bundle 'thinca/vim-ref'
