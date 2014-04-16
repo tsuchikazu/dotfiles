@@ -235,8 +235,7 @@ let g:vimfiler_marked_file_icon = '*'
 
 let g:vimfiler_pedit_command = 'right'
 let g:vimfiler_enable_auto_cd = 1
-nnoremap ff :VimFilerSimple -buffer-name=explorer -split -winwidth=35 -toggle -no-quit<CR>
-"nnoremap ff :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
+nnoremap ff :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
 
 
 "------------------------------------
