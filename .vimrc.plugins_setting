@@ -155,6 +155,8 @@ nmap    f [unite]
 nnoremap [unite]u  :<C-u>Unite<Space>
 " 全部乗せ
 nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -no-split -buffer-name=files buffer file_mru bookmark file<CR>
+" ファイル一覧
+nnoremap <silent> [unite]l  :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " 再帰的にファイル一覧
 nnoremap <silent> [unite]d  :<C-u>Unite file_rec <CR>
 " 常用セット
