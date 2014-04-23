@@ -42,6 +42,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'thinca/vim-quickrun'
 
 Bundle 'stephpy/vim-php-cs-fixer'
+" status line
+Bundle 'itchyny/lightline.vim'
 
 filetype plugin indent on
 
@@ -50,7 +52,7 @@ nnoremap <Space>v :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGV
 "基本設定
 source ~/dotfiles/.vimrc.basic
 "StatusLine設定
-source ~/dotfiles/.vimrc.statusline
+" source ~/dotfiles/.vimrc.statusline
 "インデント設定
 source ~/dotfiles/.vimrc.indent
 "表示関連
