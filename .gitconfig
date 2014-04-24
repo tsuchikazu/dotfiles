@@ -27,7 +27,9 @@
   # pull/push/fetch
   f  = fetch
   fp = fetch --prune
-  p  = pull origin         # pull origin
+  p   = pull                # pull origin
+  po  = pull origin         # pull origin
+  pom = pull origin master  # pull origin master
   # push current branch to origin with --upstream
   puc = "!f() { git push origin -u `git symbolic-ref --short HEAD` ;}; f"
   # rebase
