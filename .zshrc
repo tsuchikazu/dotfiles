@@ -668,3 +668,6 @@ esac
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [[ -s /Users/tsuchikazu/.nvm/nvm.sh ]] && . /Users/tsuchikazu/.nvm/nvm.sh # This loads NVM
+
+# bundle コマンドでautocorrect禁止
+alias bundle='nocorrect bundle'
