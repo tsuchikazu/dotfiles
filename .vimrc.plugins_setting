@@ -316,3 +316,7 @@ endfunction
 function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+"------------------------------------
+" vim-operator-replace
+"------------------------------------
+map R  <Plug>(operator-replace)

@@ -46,6 +46,9 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'stephpy/vim-php-cs-fixer'
 " status line
 Bundle 'itchyny/lightline.vim'
+" 置換
+Bundle 'kana/vim-operator-user'
+Bundle 'kana/vim-operator-replace'
 
 filetype plugin indent on
 
