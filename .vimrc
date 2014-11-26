@@ -50,6 +50,8 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'kana/vim-operator-user'
 Bundle 'kana/vim-operator-replace'
 
+Bundle 'kchmck/vim-coffee-script'
+
 filetype plugin indent on
 
 nnoremap <Space>r :<C-u>execute "source " expand("%:p")<CR>
