@@ -47,3 +47,5 @@ nnoremap <C-q> <C-^>
 
 " ウィンドウレイアウトを崩さないでバッファを閉じる
 com! Q let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
+" 後ろの空白を削除
+autocmd BufWritePre * :%s/\s\+$//ge
