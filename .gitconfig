@@ -12,9 +12,9 @@
   default = current # 現在のブランチをリモートに同名でpushする
 [core]
   excludesfile = ~/.gitignore  # globalな.gitignoreの指定
-  autocrlf = input             # CRLFを自動変換
   editor = vim
   quotepath = false
+  precomposeunicode = false
 [branch]
   autosetuprebase = always
 [pull]
@@ -162,3 +162,10 @@
   generic = G move-last-line
   generic = ^F move-page-down
   generic = ^B move-page-up
+[browse-remote "ghe.tokyo.pb"]
+	top = http://{host}/{path}
+	ref = http://{host}/{path}/tree/{short_ref}
+	rev = http://{host}/{path}/commit/{commit}
+	file = "http://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{lines && \"#L%s\" % lines.join(\"-\")}"
+[ghq]
+	root = ~/src
