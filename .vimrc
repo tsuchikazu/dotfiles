@@ -54,6 +54,7 @@ Bundle 'kchmck/vim-coffee-script'
 
 " Typescript
 Bundle 'leafgarland/typescript-vim'
+Bundle 'jason0x43/vim-js-indent'
 Bundle 'clausreinke/typescript-tools'
 
 " 構文チェック
