@@ -51,6 +51,7 @@
   a  = add
   c   = commit
   ca  = commit --amend       # 直前のcommitを修正
+  cm  = commit -m
   co  = checkout
   cob  = checkout -b         # branch切ってcheckoutする
   cot  = checkout --track    # remoteのbranchを追跡
