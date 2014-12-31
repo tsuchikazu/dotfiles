@@ -60,6 +60,9 @@ Bundle 'clausreinke/typescript-tools'
 " 構文チェック
 Bundle 'scrooloose/syntastic'
 
+Bundle 'othree/html5.vim'
+
+
 
 filetype plugin indent on
 
