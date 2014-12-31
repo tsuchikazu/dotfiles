@@ -52,6 +52,14 @@ Bundle 'kana/vim-operator-replace'
 
 Bundle 'kchmck/vim-coffee-script'
 
+" Typescript
+Bundle 'leafgarland/typescript-vim'
+Bundle 'clausreinke/typescript-tools'
+
+" 構文チェック
+Bundle 'scrooloose/syntastic'
+
+
 filetype plugin indent on
 
 nnoremap <Space>r :<C-u>execute "source " expand("%:p")<CR>
