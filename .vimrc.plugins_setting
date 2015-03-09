@@ -323,7 +323,13 @@ map R  <Plug>(operator-replace)
 
 
 "---------
-" pluginじゃないんだけどGitBrowseRemote 
+" pluginじゃないんだけどGitBrowseRemote
 " http://motemen.hatenablog.com/entry/2014/06/05/released-git-browse-remote-0-1-0
 "---------
 command! -nargs=* -range GitBrowseRemote !git browse-remote --rev -L <line1>,<line2> <f-args> -- %
+
+"------------------------------------
+" syntastic
+"------------------------------------
+"HTMLは構文チェック無効
+let g:syntastic_mode_map={ 'passive_filetypes': ['html'] }
