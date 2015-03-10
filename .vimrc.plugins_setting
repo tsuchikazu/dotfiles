@@ -98,7 +98,7 @@ inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完
 inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
 " 補完候補が出ていたら確定、なければ改行
-inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
+" inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
 "smap <expr><CR>  neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? neocomplcache#close_popup() : "<CR>"
 "imap <expr><CR>  neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? neocomplcache#close_popup() : "<CR>"
 " <TAB>: completion.
@@ -341,10 +341,10 @@ if !exists('loaded_matchit')
   " matchitを有効化
   runtime macros/matchit.vim
 endif
+
 "------------------------------------
 " Unite-rails.vim
 "------------------------------------
-"{{{
 function! UniteRailsSetting()
   nnoremap <buffer><C-H><C-H><C-H>  :<C-U>Unite rails/view<CR>
   nnoremap <buffer><C-H><C-H>       :<C-U>Unite rails/model<CR>
@@ -363,4 +363,8 @@ endfunction
 aug MyAutoCmd
   au User Rails call UniteRailsSetting()
 aug END
-"}}}
+
+""------------------------------------
+" endwise.vim
+"------------------------------------
+"let g:endwise_no_mappings=1

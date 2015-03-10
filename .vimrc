@@ -63,6 +63,8 @@ Bundle 'clausreinke/typescript-tools'
 Bundle 'scrooloose/syntastic'
 
 Bundle 'othree/html5.vim'
+" endの補完
+Bundle 'tpope/vim-endwise'
 
 
 
