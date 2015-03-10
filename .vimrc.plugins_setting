@@ -333,3 +333,11 @@ command! -nargs=* -range GitBrowseRemote !git browse-remote --rev -L <line1>,<li
 "------------------------------------
 "HTMLは構文チェック無効
 let g:syntastic_mode_map={ 'passive_filetypes': ['html'] }
+
+"------------------------------------
+" matchit.vim
+"------------------------------------
+if !exists('loaded_matchit')
+  " matchitを有効化
+  runtime macros/matchit.vim
+endif
