@@ -13,6 +13,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache'
 " ファイラー系（よくわかんないやつ。だけど人気）
 Bundle 'Shougo/unite.vim'
+" unite.vimのrails用プラグイン
+Bundle 'basyura/unite-rails'
 " uniteのmruリソースに必要
 Bundle 'Shougo/neomru.vim'
 " ファイラー
