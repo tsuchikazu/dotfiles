@@ -29,6 +29,9 @@ brew 'wget'
 brew 'xz'
 brew 'zsh-completions'
 
+tap 'supermomonga/homebrew-splhack'
+brew 'macvim-kaoriya'
+
 cask 'google-chrome'
 cask 'google-japanese-ime'
 cask 'bettertouchtool'
