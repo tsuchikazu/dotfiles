@@ -31,6 +31,7 @@ brew 'zsh-completions'
 
 tap 'supermomonga/homebrew-splhack'
 brew 'macvim-kaoriya'
+brew 'hub'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
