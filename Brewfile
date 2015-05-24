@@ -28,9 +28,6 @@ brew 'tree'
 brew 'wget'
 brew 'xz'
 brew 'zsh-completions'
-
-tap 'supermomonga/homebrew-splhack'
-brew 'macvim-kaoriya'
 brew 'hub'
 
 cask 'google-chrome'
