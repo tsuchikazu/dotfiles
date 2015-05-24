@@ -1,74 +1,96 @@
 "" プラグイン管理
-" setting for vundle
-set nocompatible
-filetype off
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
-"set rtp+=~/.vim/vundle.git/
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-"プラグイン管理
-Bundle 'gmarik/vundle'
+" Required:
+call neobundle#begin(expand('/Users/usr0600249/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
 " 補完
-Bundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache'
 " ファイラー系（よくわかんないやつ。だけど人気）
-Bundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim'
 " unite.vimのrails用プラグイン
-Bundle 'basyura/unite-rails'
+NeoBundle 'basyura/unite-rails'
 " uniteのmruリソースに必要
-Bundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neomru.vim'
 " ファイラー
 "keymappingsの重複してしまったので、回避がわからず
 "~/dotfiles/vimfiles/bundle/vimfiler/autoload/vimfiler/mappings.vim から
 "<C-l>のkey mappingsを削除して使ってます。
-Bundle 'Shougo/vimfiler'
-Bundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 " リファレンス
-Bundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-ref'
 " ツリー型ファイラ
-Bundle 'The-NERD-tree'
+NeoBundle 'The-NERD-tree'
 " バッファ管理（タブ風表示）
-"Bundle 'minibufexpl.vim'
+"NeoBundle 'minibufexpl.vim'
 " ヤンクの履歴保持
-Bundle 'YankRing.vim'
+NeoBundle 'YankRing.vim'
 " ruby on rails
-Bundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rails'
 " zencoding
-Bundle 'ZenCoding.vim'
+NeoBundle 'ZenCoding.vim'
 " utility(囲むやつ)
-Bundle 'surround.vim'
+NeoBundle 'surround.vim'
 " wordpress 投稿
-Bundle "vim-scripts/VimRepress"
+NeoBundle "vim-scripts/VimRepress"
 " markdown ハイライト
-Bundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-markdown'
 
-Bundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-quickrun'
 
-Bundle 'stephpy/vim-php-cs-fixer'
+NeoBundle 'stephpy/vim-php-cs-fixer'
 " status line
-Bundle 'itchyny/lightline.vim'
+NeoBundle 'itchyny/lightline.vim'
 " 置換
-Bundle 'kana/vim-operator-user'
-Bundle 'kana/vim-operator-replace'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'kana/vim-operator-replace'
 
-Bundle 'kchmck/vim-coffee-script'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " Typescript
-Bundle 'leafgarland/typescript-vim'
-Bundle 'jason0x43/vim-js-indent'
-Bundle 'clausreinke/typescript-tools'
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'jason0x43/vim-js-indent'
+NeoBundle 'clausreinke/typescript-tools'
 
 " 構文チェック
-Bundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 
-Bundle 'othree/html5.vim'
+NeoBundle 'othree/html5.vim'
 " endの補完
-Bundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-endwise'
 
+" Required:
+call neobundle#end()
 
-
+" Required:
 filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 nnoremap <Space>r :<C-u>execute "source " expand("%:p")<CR>
 nnoremap <Space>v :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>

@@ -8,6 +8,4 @@ do
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
-ln -s ~/dotfiles/vimfiles ~/.vim
-git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vimfiles/vundle.git
-
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
