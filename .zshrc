@@ -342,7 +342,9 @@ function cwaf() {
 
 ## Completion configuration
 #
-fpath=(~/.zsh/functions/Completion ${fpath})
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 autoload -U compinit
 compinit -u
 
@@ -467,8 +469,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-source ~/.rbenv/completions/rbenv.zsh
+eval "$(rbenv init - zsh)"
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
