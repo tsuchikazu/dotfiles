@@ -471,6 +471,10 @@ export NODE_PATH=/usr/local/lib/node_modules
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
                 LBUFFER+="~/"
@@ -669,7 +673,6 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-[[ -s /Users/tsuchikazu/.nvm/nvm.sh ]] && . /Users/tsuchikazu/.nvm/nvm.sh # This loads NVM
 
 # bundle コマンドでautocorrect禁止
 alias bundle='nocorrect bundle'
