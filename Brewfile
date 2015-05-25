@@ -29,6 +29,7 @@ brew 'wget'
 brew 'xz'
 brew 'zsh-completions'
 brew 'hub'
+brew 'nvm'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
