@@ -30,6 +30,7 @@ brew 'xz'
 brew 'zsh-completions'
 brew 'hub'
 brew 'nvm'
+brew 'pyenv'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
