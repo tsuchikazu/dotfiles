@@ -476,6 +476,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+eval "$(direnv hook zsh)"
+
 # nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -681,6 +683,7 @@ esac
 
 # bundle コマンドでautocorrect禁止
 alias bundle='nocorrect bundle'
+alias spring='nocorrect spring'
 
 # peco系
 export GOPATH=$HOME
