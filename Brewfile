@@ -34,6 +34,7 @@ brew 'pyenv'
 brew 'gibo'
 brew 'memcached'
 brew 'redis'
+brew 'pkg-config'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
