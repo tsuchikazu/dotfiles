@@ -32,6 +32,8 @@ brew 'hub'
 brew 'nvm'
 brew 'pyenv'
 brew 'gibo'
+brew 'memcached'
+brew 'redis'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
