@@ -19,6 +19,8 @@ alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g 
 alias git='hub'
 alias g='git'
 
+alias gbd="git branch --merged | egrep -v '\*|develop|master' | xargs git branch -d"
+
 ## ls
 #alias la="ls -a"
 #alias lf="ls -F"
