@@ -9,12 +9,12 @@
   interactive = auto
   grep = auto
 [push]
-  default = current # 現在のブランチをリモートに同名でpushする
+  default = current
 [core]
   excludesfile = ~/.gitignore  # globalな.gitignoreの指定
   editor = vim
   quotepath = false
-  precomposeunicode = false
+  precomposeunicode = true
 [branch]
   autosetuprebase = always
 [pull]
@@ -170,3 +170,5 @@
 	file = "http://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{lines && \"#L%s\" % lines.join(\"-\")}"
 [ghq]
 	root = ~/src
+[http]
+	postBuffer = 524288000
