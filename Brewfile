@@ -35,6 +35,8 @@ brew 'gibo'
 brew 'memcached'
 brew 'redis'
 brew 'pkg-config'
+brew 'colordiff'
+brew 'jq'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
