@@ -34,6 +34,7 @@ brew 'redis'
 brew 'pkg-config'
 brew 'colordiff'
 brew 'jq'
+brew 'go'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
@@ -55,3 +56,5 @@ cask 'karabiner'
 cask 'astah-community'
 cask 'clipmenu'
 cask 'mysqlworkbench'
+cask 'intellij-idea'
+
