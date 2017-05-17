@@ -8,4 +8,4 @@ do
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+echo 'install neobundle for vim setting. see https://github.com/Shougo/neobundle.vim'

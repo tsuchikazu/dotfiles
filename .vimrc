@@ -1,15 +1,16 @@
 "" プラグイン管理
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
 " Required:
-call neobundle#begin(expand('/Users/usr0600249/.vim/bundle'))
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -55,7 +56,7 @@ NeoBundle 'ZenCoding.vim'
 " utility(囲むやつ)
 NeoBundle 'surround.vim'
 " wordpress 投稿
-NeoBundle "vim-scripts/VimRepress"
+" NeoBundle "vim-scripts/VimRepress"
 " markdown ハイライト
 NeoBundle 'tpope/vim-markdown'
 
