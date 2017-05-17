@@ -36,6 +36,7 @@ brew 'colordiff'
 brew 'jq'
 brew 'go'
 brew 'ghq'
+brew 'macvim'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
