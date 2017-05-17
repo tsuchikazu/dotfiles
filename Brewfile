@@ -54,7 +54,7 @@ cask 'remote-desktop-connection'
 cask 'genymotion'
 cask 'karabiner'
 cask 'astah-community'
-cask 'clipmenu'
+cask 'clipy'
 cask 'mysqlworkbench'
 cask 'intellij-idea'
 
