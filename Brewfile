@@ -35,6 +35,7 @@ brew 'pkg-config'
 brew 'colordiff'
 brew 'jq'
 brew 'go'
+brew 'ghq'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
