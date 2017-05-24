@@ -37,7 +37,6 @@ brew 'jq'
 brew 'go'
 brew 'ghq'
 brew 'macvim'
-brew 'dash'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
@@ -59,4 +58,5 @@ cask 'astah-community'
 cask 'clipy'
 cask 'mysqlworkbench'
 cask 'intellij-idea'
+cask 'dash'
 
