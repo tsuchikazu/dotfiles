@@ -1,7 +1,5 @@
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
-tap 'homebrew/versions'
 
 brew 'boot2docker'
 brew 'cocot'
