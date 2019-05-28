@@ -47,4 +47,5 @@ cask 'vagrant'
 cask 'java'
 cask 'clipy'
 cask 'dash'
+cask 'visual-studio-code'
 
