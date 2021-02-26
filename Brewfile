@@ -32,6 +32,7 @@ brew 'jq'
 brew 'go'
 brew 'ghq'
 brew 'macvim'
+brew 'coreutils'
 
 cask 'google-chrome'
 cask 'google-japanese-ime'
