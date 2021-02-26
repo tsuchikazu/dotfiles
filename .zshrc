@@ -480,7 +480,7 @@ eval "$(direnv hook zsh)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
@@ -696,7 +696,9 @@ function peco-src () {
     zle clear-screen
 }
 zle -N peco-src
-bindkey '^]' peco-src
+bindkey '^[' peco-src
+
+
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -729,3 +731,11 @@ function peco-git-branch-checkout () {
 }
 zle -N peco-git-branch-checkout
 bindkey '^g^b' peco-git-branch-checkout
+
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+unsetopt correctall
+
+# 見やすい色に
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+eval $(dircolors)
+

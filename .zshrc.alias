@@ -1,6 +1,6 @@
 
 # ls
-alias ls='ls -Gh'
+alias ls='gls --color -Gh'
 alias ll='ls -l'
 alias la='ls -a'
 
