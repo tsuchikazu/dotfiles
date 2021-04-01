@@ -1,6 +1,3 @@
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-
 brew 'git'
 brew 'nkf'
 brew 'peco'
