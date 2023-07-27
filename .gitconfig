@@ -10,11 +10,14 @@
   grep = auto
 [push]
   default = current
+  autoSetupRemote = true
 [core]
   excludesfile = ~/.gitignore  # globalな.gitignoreの指定
   editor = vim
   quotepath = false
   precomposeunicode = true
+  longpaths = true
+  ignorecase = false
 [branch]
   autosetuprebase = always
 [pull]
@@ -157,6 +160,7 @@
   fs  = flow support
 
   fizzbuzz = "!f() { seq "$@" | awk '$0=NR%15?NR%5?NR%3?$0:\"Fizz\":\"Buzz\":\"FizzBuzz\"' ;}; f"
+  pushf = push --force-with-lease --force-if-includes
 
 [tig "bind"]
   generic = g move-first-line
