@@ -1,13 +1,11 @@
 # users generic .zshrc file for zsh(1)
-
-
 ## Environment variable configuration
 #
 # LANG
 # http://curiousabt.blog27.fc2.com/blog-entry-65.html
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
-
+export LESS='-R'
 
 ## Backspace key
 #
@@ -144,9 +142,6 @@ setopt correct
 
 # コマンドライン全てのスペルチェックをする
 setopt correct_all
-
-# 上書きリダイレクトの禁止
-setopt no_clobber
 
 # 補完候補リストを詰めて表示
 setopt list_packed
@@ -342,11 +337,12 @@ function cwaf() {
 
 ## Completion configuration
 #
-if [ -e /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit -u
 fi
-autoload -U compinit
-compinit -u
 
 
 ## zsh editor
@@ -479,7 +475,8 @@ eval "$(pyenv init -)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
@@ -699,17 +696,15 @@ bindkey '^[' peco-src
 
 
 function peco-select-history() {
+
+    # historyを番号なし、逆順、最初から表示。
+    # 順番を保持して重複を削除。
+    # カーソルの左側の文字列をクエリにしてpecoを起動
+    # \nを改行に変換
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+    CURSOR=$#BUFFER             # カーソルを文末に移動
+    zle -R -c                   # refresh
     local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(\history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle clear-screen
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
@@ -731,10 +726,17 @@ function peco-git-branch-checkout () {
 zle -N peco-git-branch-checkout
 bindkey '^g^b' peco-git-branch-checkout
 
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 unsetopt correctall
 
 # 見やすい色に
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 eval $(dircolors)
+
+# aws
+autoload bashcompinit
+bashcompinit
+complete -C '/opt/homebrew/bin/aws_completer' aws
+
+# paste to peco
+unset zle_bracketed_paste
 
