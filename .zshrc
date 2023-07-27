@@ -219,8 +219,8 @@ bindkey '^S' history-incremental-pattern-search-forward
 
 ## Command history configuration
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=530000
+SAVEHIST=530000
 
 # 登録済コマンド行は古い方を削除
 setopt hist_ignore_all_dups
