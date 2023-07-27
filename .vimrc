@@ -123,4 +123,15 @@ source ~/dotfiles/.vimrc.misc
 "プラグインに依存するアレ
 source ~/dotfiles/.vimrc.plugins_setting
 
+nnoremap ri" "_di"P
+nnoremap ri' "_di'P
+nnoremap ri( "_di(P
+nnoremap ri{ "_di{P
+nnoremap r$ "_d$p
+
+nnoremap <S-r>i" "_di"P
+nnoremap <S-r>i' "_di'P
+nnoremap <S-r>i( "_di(P
+nnoremap <S-r>i{ "_di{P
+nnoremap <S-r>$ "_d$p
 

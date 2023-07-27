@@ -1,1 +1,17 @@
 set clipboard=unnamed
+" Escで音を出さない
+set visualbell
+
+" replace テキストオブジェクト
+nnoremap ri" "_di"P
+nnoremap ri' "_di'P
+nnoremap ri( "_di(P
+nnoremap ri{ "_di{P
+nnoremap r$ "_d$p
+
+nnoremap <S-r>i" "_di"P
+nnoremap <S-r>i' "_di'P
+nnoremap <S-r>i( "_di(P
+nnoremap <S-r>i{ "_di{P
+nnoremap <S-r>$ "_d$p
+
